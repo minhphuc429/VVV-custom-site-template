@@ -2,7 +2,7 @@
 For when you just need a simple dev site
 
 ## Overview
-This template will allow you to create a WordPress dev environment using only `vvv-custom.yml`.
+This template will allow you to create a WordPress dev environment using only `vvv-config.yml`.
 
 The supported environments are:
 - A single site
@@ -15,7 +15,7 @@ The supported environments are:
 
 ```
 my-site:
-  repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template
+  repo: https://github.com/minhphuc429/VVV-custom-site-template.git
   hosts:
     - my-site.dev
 ```
@@ -31,7 +31,7 @@ my-site:
 
 ```
 my-site:
-  repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template
+  repo: https://github.com/minhphuc429/VVV-custom-site-template.git
   hosts:
     - foo.dev
   custom:
@@ -49,7 +49,7 @@ my-site:
 
 ```
 my-site:
-  repo: https://github.com/Varying-Vagrant-Vagrants/custom-site-template
+  repo: https://github.com/minhphuc429/VVV-custom-site-template.git
   hosts:
     - multisite.dev
     - site1.multisite.dev
@@ -78,13 +78,13 @@ The first domain in this list is your sites primary domain.
 
 ```
 custom:
-    site_title: My Awesome Dev Site
+    site_title: Local Wordpress Dev
 ```
 Defines the site title to be set upon installing WordPress.
 
 ```
 custom:
-    wp_version: 4.6.4
+    wp_version: 4.7.3
 ```
 Defines the WordPress version you wish to install.
 Valid values are:
@@ -104,10 +104,26 @@ Valid values are:
 - subdomain
 - subdirectory
 
+Defines the DB name for the installation.
 ```
 custom:
-    db_name: super_secet_db_name
+    db_name: local_wordpress_dev
 ```
-Defines the DB name for the installation.
 
+Defines the DB prefix for the installation.
+```
+custom:
+    db_prefix: bjk2h1_
+```
 
+Defines the language you want to download for the installation.
+```
+custom:
+    locale: vi
+```
+
+Batch Install WordPress Plugins.
+```
+custom:
+    plugins: wordpress-seo ewww-image-optimizer better-wp-security aceide
+```
