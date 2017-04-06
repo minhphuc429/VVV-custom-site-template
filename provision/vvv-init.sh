@@ -13,7 +13,7 @@ PREFIX=wp_$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 6 | head -n 1)_
 DB_PREFIX=`get_config_value 'db_prefix' "${PREFIX}"`
 LOCALE=`get_config_value 'locale' "en_US"`
 #define array of plugin slugs to install
-PLUGINS="wordpress-importer wp-smushit contact-form-7 tinymce-advanced"
+PLUGINS="akismet all-in-one-seo-pack contact-form-7 jetpack sucuri-scanner tesla-login-customizer tinymce-advanced w3-total-cache woocommerce wordpress-importer wordpress-seo wp-smushit wp-super-cache yith-woocommerce-wishlist"
 PLUGINS=( `get_config_value 'plugins' "${PLUGINS}"` )
 
 # Make a database, if we don't already have one
@@ -55,23 +55,24 @@ if ! $(noroot wp core is-installed); then
   
   noroot wp core language update
 
-  # Delete plugin Hello Dolly
-  noroot wp plugin delete hello
+  echo "Deleting post hello world"
+  noroot wp post delete 1 --force --defer-term-counting --quiet
 
-  # Delete all posts skipping trash
-  noroot wp post delete $(wp post list --post_status='post' --format=ids) --force
+  echo "Deleting page example"
+  noroot wp post delete 2 --force --defer-term-counting --quiet
 
-  # Delete all pages skipping trash
-  noroot wp post delete $(wp post list --post_type='page' --format=ids) --force
+  echo "Deleting plugin Hello Dolly"
+  noroot wp plugin delete hello --quiet
 
   #loop through array, install and activate the plugin, ${PLUGINS[@]}
+  echo "Installing plugin"
   for PLUGIN in "${PLUGINS[@]}"; do
   #check if plugin is installed, sets exit status to 1 if not found
     noroot wp plugin is-installed $PLUGIN
 
   #install plugin if not present based on exit code value
     if [ $? -eq 1 ]; then
-        noroot wp plugin install $PLUGIN --activate
+        noroot wp plugin install $PLUGIN --quiet
     fi
   done
 
