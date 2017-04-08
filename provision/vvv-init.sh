@@ -13,7 +13,7 @@ PREFIX=wp_$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 6 | head -n 1)_
 DB_PREFIX=`get_config_value 'db_prefix' "${PREFIX}"`
 LOCALE=`get_config_value 'locale' "en_US"`
 #define array of plugin slugs to install
-PLUGINS="akismet all-in-one-seo-pack contact-form-7 flamingo jetpack stops-core-theme-and-plugin-updates sucuri-scanner tesla-login-customizer tinymce-advanced w3-total-cache woocommerce wordpress-importer wordpress-seo wp-smushit wp-super-cache yith-woocommerce-ajax-navigation yith-woocommerce-compare yith-woocommerce-quick-view yith-woocommerce-wishlist"
+PLUGINS="akismet all-in-one-seo-pack contact-form-7 flamingo jetpack stops-core-theme-and-plugin-updates sucuri-scanner tesla-login-customizer tinymce-advanced w3-total-cache woocommerce wordpress-importer wordpress-seo wp-smushit wp-super-cache yith-woocommerce-ajax-navigation yith-woocommerce-compare yith-woocommerce-quick-view yith-woocommerce-wishlist remove-query-strings-from-static-resources"
 PLUGINS=( `get_config_value 'plugins' "${PLUGINS}"` )
 
 # Make a database, if we don't already have one
