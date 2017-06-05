@@ -117,7 +117,7 @@ custom:
 Defines the DB prefix for the installation.
 ```
 custom:
-    db_prefix: bjk2h1_
+    db_prefix: wp_bjk2h1_
 ```
 
 Defines the language you want to download for the installation.
