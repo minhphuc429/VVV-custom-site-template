@@ -1,4 +1,4 @@
-# VVV Custom site template
+# VVV Custom Site Template
 For when you just need a simple dev site
 
 ## Overview
