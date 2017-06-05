@@ -9,6 +9,10 @@ The supported environments are:
 - A subdomain multisite
 - A subdirectory multisite
 
+## Default Wordpress Account
+- Username: developer
+- Password: developer
+
 # Configuration
 
 ### The minimum required configuration:
@@ -26,7 +30,7 @@ my-site:
 | DB Name    | my-site     |
 | Site Type  | Single      |
 | WP Version | Latest      |
-
+z
 ### Minimal configuration with custom domain and WordPress Nightly:
 
 ```
