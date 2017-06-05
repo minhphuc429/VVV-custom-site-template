@@ -18,10 +18,10 @@ The supported environments are:
 ### The minimum required configuration:
 
 ```
-my-site:
+nguyenminhphuc:
   repo: https://github.com/minhphuc429/VVV-custom-site-template.git
   hosts:
-    - my-site.dev
+    - nguyenminhphuc.dev
 ```
 | Setting    | Value       |
 |------------|-------------|
